@@ -4,6 +4,24 @@
 
 .App pre {
   text-align: left;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+}
+
+.App ul {
+  max-width: 100%;
+}
+
+.App ul li {
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.App ul li > span:nth-of-type(2) {
+  word-break: break-word;
 }
 
 .App-logo {
