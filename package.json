@@ -12,7 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "pull:env": "curl -H \"Authorization: 53e69ed540e3c5b53306cd2485fc96e21b013752a94b6cb8d36be80924f30a74\" https://staging.api.tawbar.com/projects/v1/NOV3NgjLQSkYwoKHbF1L/develop -o .env",
+    "pull:env": "curl -H \"Authorization: 00a4770fc19fb5810b0e28dfe69336cabd7fce3c0926175e3f9a1cc50cc7417d\" https://staging.api.tawbar.com/projects/v1/x0hAMpHr71nJoWL00AwN/$ENV -o .env",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
