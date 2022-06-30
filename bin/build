@@ -12,7 +12,7 @@ docker-compose run --rm app bash -c "npx tawbar fetch demo-app ${ENVIRONMENT} --
 
 # A hack to overcome an error in GitHub Actions:
 # EACCES: permission denied, mkdir '/app/node_modules/.cache'
-docker-compose run --rm app bash -c "mkdir /app/node_modules/.cache && chmod u+w /app/node_modules/.cache"
+docker-compose run --rm app bash -c "mkdir /app/node_modules/.cache && chmod 777 /app/node_modules/.cache"
 
 rm -rf build/app
 mkdir -p build/app
