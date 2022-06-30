@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ -z "${TAWBAR_TOKEN}" ]]; then
+  echo "TAWBAR_TOKEN must be set"
+  exit 1
+fi
+
+ENVIRONMENT=${1:-production}
+
+docker-compose run --rm app npm install
+docker-compose run --rm app bash -c "npx tawbar fetch demo-app ${ENVIRONMENT} --token=${TAWBAR_TOKEN}"
+
+rm -rf build/app
+mkdir -p build/app
+docker-compose run --rm -v $(pwd)/build/app:/app/build app npm run build

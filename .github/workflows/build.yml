@@ -1,0 +1,14 @@
+name: Build
+on: push
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - run: bin/build production
+        env:
+          TAWBAR_TOKEN: ${{ secrets.TAWBAR_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        with:
+          path: build/app

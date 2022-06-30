@@ -12,9 +12,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "pull:env": "curl -H \"Authorization: 00a4770fc19fb5810b0e28dfe69336cabd7fce3c0926175e3f9a1cc50cc7417d\" https://staging.api.tawbar.com/projects/v1/x0hAMpHr71nJoWL00AwN/$ENV -o .env",
     "start": "react-scripts start",
-    "build": "npm run pull:env && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
