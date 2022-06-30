@@ -10,6 +10,10 @@ ENVIRONMENT=${1:-production}
 docker-compose run --rm app npm install
 docker-compose run --rm app bash -c "npx tawbar fetch demo-app ${ENVIRONMENT} --token=${TAWBAR_TOKEN}"
 
+# A hack to overcome an error in GitHub Actions:
+# EACCES: permission denied, mkdir '/app/node_modules/.cache'
+docker-compose run --rm app bash -c "mkdir /app/node_modules/.cache && chmod u+w /app/node_modules/.cache"
+
 rm -rf build/app
 mkdir -p build/app
 docker-compose run --rm -v $(pwd)/build/app:/app/build app npm run build
