@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+docker-compose run --rm app npm install
+
+if ! docker-compose run --rm app npx tawbar fetch demo-app develop; then
+  echo "Please login to tawbar and run bin/setup one more time"
+  docker-compose run --rm app npx tawbar login
+fi

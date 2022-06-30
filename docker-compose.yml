@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  app:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./app:/app
+      - node_modules:/app/node_modules
+      - ./app/.tawbar:/root/.tawbar
+    ports:
+      - 3000:3000
+    environment:
+      HOST: 0.0.0.0
+    command: npm start
+
+volumes:
+  node_modules:
